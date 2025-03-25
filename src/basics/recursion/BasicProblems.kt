@@ -5,6 +5,12 @@ fun main() {
     readInputToPrintFromTo1()
 }
 
+// factorial of n numbers
+private fun fact(n: Int): Int {
+    if (n == 0) return 1
+    return n * fact(n - 1)
+}
+
 // print sum of n numbers
 private fun sumOfN(i: Int, sum: Int) {
     if (i < 1) {
@@ -14,10 +20,11 @@ private fun sumOfN(i: Int, sum: Int) {
     sumOfN(i - 1, sum + i)
 
 }
+
 // another method for sum on n numbers using functional recursion
-private fun sumOfN(n: Int) : Int{
+private fun sumOfN(n: Int): Int {
     if (n == 0) return 0
-    return n + sumOfN(n-1)
+    return n + sumOfN(n - 1)
 }
 
 // print from n to 1
@@ -25,7 +32,7 @@ private fun readInputToPrintFromTo1() {
     print("Enter a number for which you want to calculate the sum: ")
     val num = readln().toInt()
     //printNumbers(num, 1)
-    println(sumOfN(num))
+    println(fact(num))
 }
 
 private fun printNumbers(n: Int, i: Int) {
