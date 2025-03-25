@@ -5,12 +5,27 @@ fun main() {
     readInputToPrintFromTo1()
 }
 
+// print sum of n numbers
+private fun sumOfN(i: Int, sum: Int) {
+    if (i < 1) {
+        println(sum)
+        return
+    }
+    sumOfN(i - 1, sum + i)
+
+}
+// another method for sum on n numbers using functional recursion
+private fun sumOfN(n: Int) : Int{
+    if (n == 0) return 0
+    return n + sumOfN(n-1)
+}
+
 // print from n to 1
 private fun readInputToPrintFromTo1() {
-    print("Enter a number for which you want to print: ")
+    print("Enter a number for which you want to calculate the sum: ")
     val num = readln().toInt()
     //printNumbers(num, 1)
-    printNumber(num, num)
+    println(sumOfN(num))
 }
 
 private fun printNumbers(n: Int, i: Int) {
