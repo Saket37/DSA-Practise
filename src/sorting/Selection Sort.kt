@@ -5,7 +5,7 @@ fun main() {
     selectionSort(arr)
     println(arr)
 }
-
+// TC - O(n ^2)
 private fun selectionSort(arr: MutableList<Int>) {
     for (i in 0..arr.size - 2) {
         var min = i
