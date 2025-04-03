@@ -6,6 +6,7 @@ fun main() {
     println(arr)
 }
 
+// TC - O(n log n)
 private fun qs(arr: MutableList<Int>, low: Int, high: Int) {
     if (low < high) {
         val pivot = sort(arr, low, high)
