@@ -20,7 +20,15 @@ private fun isSorted(arr: MutableList<Int>): Boolean {
 
     return true
 }
-
+/**
+ *  reverse(arr, 0, 0)
+ *  reverse(arr, 1, arr.lastIndex)
+ *  reverse(arr, 0, arr.lastIndex)
+ *  the reason of taking this as 0 and 1 rather than using rotation like we do in rotation of array
+ *  is that because we are working on a mutable list.
+ *  the array will already be rotated by 1, then we perform another rotation by 1. which means we
+ *  did rotation +2
+ * **/
 private fun rotateList(arr: MutableList<Int>): Boolean {
     var rotation = 1
     while (rotation <= arr.lastIndex) {
