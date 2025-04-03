@@ -3,9 +3,12 @@ package leetcode
 
 fun main() {
     val l = mutableListOf(6, 10, 6)
-    println(rotateList(l))
+    //println(rotateList(l))
+    println(check(l))
+
 }
 
+// Brute Force Sol
 private fun isSorted(arr: MutableList<Int>): Boolean {
 
     if (arr.size <= 1) {
@@ -20,6 +23,7 @@ private fun isSorted(arr: MutableList<Int>): Boolean {
 
     return true
 }
+
 /**
  *  reverse(arr, 0, 0)
  *  reverse(arr, 1, arr.lastIndex)
@@ -35,7 +39,7 @@ private fun rotateList(arr: MutableList<Int>): Boolean {
         reverse(arr, 0, 0)
         reverse(arr, 1, arr.lastIndex)
         reverse(arr, 0, arr.lastIndex)
-       // println(arr)
+        // println(arr)
 
         if (!isSorted(arr)) {
             rotation++
@@ -51,6 +55,28 @@ private fun reverse(arr: MutableList<Int>, start: Int, end: Int) {
     val temp = arr[start]
     arr[start] = arr[end]
     arr[end] = temp
-   // println("REV ${arr}")
+    // println("REV ${arr}")
     reverse(arr, start + 1, end - 1)
+}
+
+// Brute Force Sol
+
+
+
+// optimal
+private fun check(arr: MutableList<Int>): Boolean {
+    val n = arr.lastIndex
+    if (n <= 0) return true
+
+    var inversionCount = 0
+    for (i in 1..n) {
+        if (arr[i] < arr[i - 1]) {
+            inversionCount++
+            if (inversionCount > 1) return false
+        }
+    }
+    if (arr[0] < arr[n]) {
+        inversionCount++
+    }
+    return inversionCount <= 1
 }
