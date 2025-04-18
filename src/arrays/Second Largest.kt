@@ -35,7 +35,7 @@ fun secondLargestOptimal(arr: List<Int>): Int {
         if (arr[i] > largest) {
             secondLargest = largest
             largest = arr[i]
-        } else if (arr[i] < largest && arr[i] < secondLargest)
+        } else if (arr[i] < largest && arr[i] > secondLargest)
             secondLargest = arr[i]
     }
     return secondLargest
