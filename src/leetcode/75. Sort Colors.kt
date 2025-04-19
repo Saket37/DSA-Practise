@@ -8,6 +8,7 @@ fun main() {
 // better - count the 0s,1s and 2s. replace the list with count of the nos.
 
 // optimal - using 3 pointer (Dutch National Flag algorithm (DNF))
+// TC - O(n) and SC - O(1)
 private fun optimal(nums: IntArray) {
     var low = 0
     var mid = 0
